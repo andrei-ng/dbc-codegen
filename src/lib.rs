@@ -139,11 +139,11 @@ pub fn codegen(config: Config<'_>, out: impl Write) -> Result<()> {
     writeln!(&mut w)?;
     writeln!(
         &mut w,
-        "//! Message definitions from file `{:?}`",
+        "//Message definitions from file `{:?}`",
         config.dbc_name
     )?;
-    writeln!(&mut w, "//!")?;
-    writeln!(&mut w, "//! - Version: `{:?}`", dbc.version())?;
+    writeln!(&mut w, "//")?;
+    writeln!(&mut w, "// Version: `{:?}`", dbc.version())?;
     writeln!(&mut w)?;
     writeln!(&mut w, "use core::ops::BitOr;")?;
     writeln!(&mut w, "use bitvec::prelude::*;")?;
