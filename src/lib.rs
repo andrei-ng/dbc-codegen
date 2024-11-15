@@ -121,25 +121,25 @@ pub fn codegen(config: Config<'_>, out: impl Write) -> Result<()> {
     writeln!(&mut w, "// Generated code!")?;
     writeln!(
         &mut w,
-        "#![allow(unused_comparisons, unreachable_patterns, unused_imports)]"
+        "#[allow(unused_comparisons, unreachable_patterns, unused_imports)]"
     )?;
     if config.allow_dead_code {
-        writeln!(&mut w, "#![allow(dead_code)]")?;
+        writeln!(&mut w, "#[allow(dead_code)]")?;
     }
-    writeln!(&mut w, "#![allow(clippy::let_and_return, clippy::eq_op)]")?;
+    writeln!(&mut w, "#[allow(clippy::let_and_return, clippy::eq_op)]")?;
     writeln!(
         &mut w,
-        "#![allow(clippy::useless_conversion, clippy::unnecessary_cast)]"
+        "#[allow(clippy::useless_conversion, clippy::unnecessary_cast)]"
     )?;
     writeln!(
         &mut w,
-        "#![allow(clippy::excessive_precision, clippy::manual_range_contains, clippy::absurd_extreme_comparisons, clippy::too_many_arguments)]"
+        "#[allow(clippy::excessive_precision, clippy::manual_range_contains, clippy::absurd_extreme_comparisons, clippy::too_many_arguments)]"
     )?;
-    writeln!(&mut w, "#![deny(clippy::arithmetic_side_effects)]")?;
+    writeln!(&mut w, "#[deny(clippy::arithmetic_side_effects)]")?;
     writeln!(&mut w)?;
     writeln!(
         &mut w,
-        "//Message definitions from file `{:?}`",
+        "// Message definitions from file `{:?}`",
         config.dbc_name
     )?;
     writeln!(&mut w, "//")?;
